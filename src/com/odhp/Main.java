@@ -3,6 +3,7 @@ package com.odhp;
 import com.odhp.strategy.FacebookStrategy;
 import com.odhp.strategy.GooglePlusStrategy;
 import com.odhp.strategy.SocialMediaContext;
+import com.odhp.strategy.TwitterStrategy;
 
 public class Main {
 
@@ -16,6 +17,11 @@ public class Main {
         System.out.println("===========================");
 
         smContext.setSocialMediaStrategy(new GooglePlusStrategy());
+        smContext.connect("Leah");
+
+        System.out.println("===========================");
+
+        smContext.setSocialMediaStrategy(new TwitterStrategy());
         smContext.connect("Leah");
 
         System.out.println("===========================");
