@@ -12,17 +12,17 @@ public class Main {
         SocialMediaContext smContext = new SocialMediaContext();
         // Facebook strategy
         smContext.setSocialMediaStrategy(new FacebookStrategy());
-        smContext.connect("Leah");
+        smContext.connect("Otha");
 
         System.out.println("===========================");
 
         smContext.setSocialMediaStrategy(new GooglePlusStrategy());
-        smContext.connect("Leah");
+        smContext.connect("Otha");
 
         System.out.println("===========================");
 
         smContext.setSocialMediaStrategy(new TwitterStrategy());
-        smContext.connect("Leah");
+        smContext.connect("Otha");
 
         System.out.println("===========================");
     }
