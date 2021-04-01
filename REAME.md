@@ -21,7 +21,7 @@ This forms the basis of almost every design pattern.
 
 ## Behavorial
 
-Strategy:
+### Strategy
 This is when class behavior or algorithm can be changed at run time by encapsulating it inside of a it's own class.
 
 Consider this example. You have a Duck superclass and a bunch of ducks that inherit from it. They inherit it's behavior/methods, like quack which is great. THey have to implemement the quack method in each sub class. But now we want to be able to give every duck that can fly a fly method. Well we add the fly method to the duck superclass and implement it everywhere else. The problem is that what if we had a rubber duck sub class? Well that subclass shouldn't be able to fly? So how do we deal with that?
