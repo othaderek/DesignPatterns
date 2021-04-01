@@ -1,8 +1,23 @@
 package com.odhp;
 
+import com.odhp.strategy.FacebookStrategy;
+import com.odhp.strategy.GooglePlusStrategy;
+import com.odhp.strategy.SocialMediaContext;
+
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        SocialMediaContext smContext = new SocialMediaContext();
+        // Facebook strategy
+        smContext.setSocialMediaStrategy(new FacebookStrategy());
+        smContext.connect("Leah");
+
+        System.out.println("===========================");
+
+        smContext.setSocialMediaStrategy(new GooglePlusStrategy());
+        smContext.connect("Leah");
+
+        System.out.println("===========================");
     }
 }
