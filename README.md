@@ -171,3 +171,21 @@ public class SMSNotificationExecutor implements INotificationExecutor{
 }
 ```
 
+Now we want to create our factory that returns instances of Email of SMS notification executors.
+
+```java
+package com.odhp.factory;
+
+public class NotificationExecutorFactory {
+    public static INotificationExecutor getNotificationExecutor(String executorType){
+        if (executorType.equalsIgnoreCase("email")) {
+            return new EmailNotificationExecutor();
+        }
+        if (executorType.equalsIgnoreCase("sms")){
+            return new SMSNotificationExecutor();
+        }
+        return null;
+    }
+}
+```
+
