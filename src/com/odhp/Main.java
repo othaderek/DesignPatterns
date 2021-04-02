@@ -1,5 +1,6 @@
 package com.odhp;
 
+import com.odhp.factory.NotificationExecutorFactory;
 import com.odhp.strategy.FacebookStrategy;
 import com.odhp.strategy.GooglePlusStrategy;
 import com.odhp.strategy.SocialMediaContext;
@@ -10,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         SocialMediaContext smContext = new SocialMediaContext();
-        // Facebook strategy
+
         smContext.setSocialMediaStrategy(new FacebookStrategy());
         smContext.connect("Otha");
 
@@ -25,5 +26,8 @@ public class Main {
         smContext.connect("Otha");
 
         System.out.println("===========================");
+
+        NotificationExecutorFactory.getNotificationExecutor("sms").executeNotification();
+        NotificationExecutorFactory.getNotificationExecutor("email").executeNotification();
     }
 }
