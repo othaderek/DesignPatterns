@@ -25,13 +25,13 @@ Definition: These are design patterns that identify common communication pattern
 By doing so, these patterns increase flexibility in carrying out communication.
 
 ### Strategy
-This is when class behavior or algorithm can be changed at run time by encapsulating it inside of a it's own class.
+This is when class behavior or algorithm can be changed at run time by encapsulating it inside its own class.
 
-Consider this example. You have a Duck superclass and a bunch of ducks that inherit from it. They inherit it's behavior/methods, like quack which is great. THey have to implemement the quack method in each sub class. But now we want to be able to give every duck that can fly a fly method. Well we add the fly method to the duck superclass and implement it everywhere else. The problem is that what if we had a rubber duck sub class? Well that subclass shouldn't be able to fly? So how do we deal with that?
+Consider this example. You have a Duck superclass, and a bunch of ducks that inherit from it. They inherit its behavior/methods, like quack which is great. THey have to implemement the quack method in each sub class. Now we want to be able to give every duck that can fly a fly method. Well we add the fly method to the duck superclass and implement it everywhere else. The problem is that what if we had a rubber duck sub class? Well that subclass shouldn't be able to fly? So how do we deal with that?
 
 If I want to be able to give some but not all subclasses some behavior we could use the strategy pattern.
 
-Lets take another example. Say we have a social media application and we want it to connect to a friend on all social media platforms. I would have to implement some connectTo behavior for each social media platform that they are on. This is a perfect time to use the strategy pattern.
+Let's take another example. Say we have a social media application, and we want it to connect to a friend on all social media platforms. I would have to implement some connectTo behavior for each social media platform that they are on. This is a perfect time to use the strategy pattern.
 
 Let's start by creating a context
 
@@ -55,7 +55,7 @@ public class SocialMediaContext {
 
 Notice how we are saving an instance of some class that implements `ISocialMediaStrategy`, and I have a method called `connect(String name)` that runs some method called `connectTo(name)`. We can use this context to store whatever specific social media strategy class the implements ISocialMediaStrategy in here and call it's own version of the `connectTo` method.
 
-Lets create that interface now.
+Let's create that interface now.
 
 ```java
 package com.odhp.strategy;
@@ -94,7 +94,7 @@ public class GooglePlusStrategy implements ISocialMediaStrategy{
 
 Notice how they are both implementing their own versions of the connectTo method.
 
-Finally this is how we might use these different strategies. Let's take a look at the Main class.
+Finally, this is how we might use these different strategies. Let's take a look at the Main class.
 
 ```java
 public class Main {
@@ -120,3 +120,12 @@ public class Main {
     }
 }
 ```
+
+There you have it!
+***
+## Creational
+
+### Factory
+
+Definition: In Factory pattern, we create an object without exposing the creation logic to the client and refer to the newly created object using a common interface.
+
