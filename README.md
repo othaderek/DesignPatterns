@@ -129,3 +129,45 @@ There you have it!
 
 Definition: In Factory pattern, we create an object without exposing the creation logic to the client and refer to the newly created object using a common interface.
 
+Lets say we have a notification system and we have some clients that prefer Email notifications and other
+clients that prefer SMS notifications. This would be the perfect time to use the Factory pattern.
+
+This is how it looks.
+
+Let's create some interface called `INotificationExecutor`
+
+```java
+package com.odhp.factory;
+
+public interface INotificationExecutor {
+    public void executeNotification();
+}
+
+```
+
+Then we will create an `EmailNotificationExecutor` class that implements `INotificationExecutor`
+```java
+package com.odhp.factory;
+
+public class EmailNotificationExecutor implements INotificationExecutor{
+    @Override
+    public void executeNotification() {
+        System.out.println("Email notification sent!");
+    }
+}
+
+```
+
+We also want to create SMS notifications, so we should create one for SMS too.
+
+```java
+package com.odhp.factory;
+
+public class SMSNotificationExecutor implements INotificationExecutor{
+    @Override
+    public void executeNotification() {
+        System.out.println("SMS Notification sent!");
+    }
+}
+```
+
