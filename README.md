@@ -19,7 +19,10 @@ This forms the basis of almost every design pattern.
 
 *Favor composition over inheritance*
 
-## Behavorial
+## Behavioral
+
+Definition: These are design patterns that identify common communication patterns among objects. 
+By doing so, these patterns increase flexibility in carrying out communication.
 
 ### Strategy
 This is when class behavior or algorithm can be changed at run time by encapsulating it inside of a it's own class.
