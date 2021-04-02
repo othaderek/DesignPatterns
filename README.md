@@ -189,3 +189,5 @@ public class NotificationExecutorFactory {
 }
 ```
 
+This class has a method that returns new instances of `INotificationExecutor`
+depending on some string input.
