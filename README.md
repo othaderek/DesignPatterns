@@ -145,7 +145,7 @@ public interface INotificationExecutor {
 
 ```
 
-Then we will create an `EmailNotificationExecutor` class that implements `INotificationExecutor`
+Next we will create an `EmailNotificationExecutor` class that implements `INotificationExecutor`
 ```java
 package com.odhp.factory;
 
